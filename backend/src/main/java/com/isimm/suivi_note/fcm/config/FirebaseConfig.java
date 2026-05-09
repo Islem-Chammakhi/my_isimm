@@ -1,4 +1,4 @@
-package com.isimm.suivi_note.config.fcm;
+package com.isimm.suivi_note.fcm.config;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
