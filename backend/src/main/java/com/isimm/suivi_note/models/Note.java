@@ -15,7 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(uniqueConstraints =
+@Table(name="note",uniqueConstraints =
         @UniqueConstraint(
                 columnNames = {
                         "etudiant_id",
@@ -47,7 +47,7 @@ public class Note {
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "matiere_id"),
-            @JoinColumn(name = "filiere_id")
+            @JoinColumn(name = "filiere_id"),
             @JoinColumn(name = "ue_id"),
     })
     private Matiere matiere;
