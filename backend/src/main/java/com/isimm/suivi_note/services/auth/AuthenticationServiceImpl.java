@@ -118,13 +118,12 @@ public class AuthenticationServiceImpl implements AuthenticationService  {
         checkUserCin(request.getCin());
         UserIsimm userIsimm=checkUserIsimm(request.getCin());
         checkUserPasswords(request.getPassword(),request.getConfirmPassword());
-        User user = Etudiant.builder()
+        Etudiant user = Etudiant.builder()
                 .cin(userIsimm.getCin())
                 .firstName(userIsimm.getFirstName())
                 .lastName(userIsimm.getLastName())
                 .email(userIsimm.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.STUDENT)
                 .filiere(f)
                 .build();
         userRepository.save(user);
@@ -157,7 +156,7 @@ public class AuthenticationServiceImpl implements AuthenticationService  {
         return new UserDTO(
                 u.getCin(),
                 u.getFirstName() +" "+ u.getLastName(),
-                u.getRole().name()
+                u.getRole()
         );
     }
 
