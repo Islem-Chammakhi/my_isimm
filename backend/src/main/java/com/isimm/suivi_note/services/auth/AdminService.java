@@ -22,7 +22,6 @@ public class AdminService {
                 .email(studentDto.email())
                 .password(studentDto.password())
                 // .registrationNumber(studentDto.registrationNumber())
-                .role(Role.ADMIN)
                 .build();
         return adminRepo.save(admin);
 

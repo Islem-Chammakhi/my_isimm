@@ -38,7 +38,6 @@ public class StudentService {
                 .email(studentDto.email())
                 .password(studentDto.password())
                 // .registrationNumber(studentDto.registrationNumber())
-                .role(Role.STUDENT)
                 .build();
         return studentRepo.save(etudiant);
     }
